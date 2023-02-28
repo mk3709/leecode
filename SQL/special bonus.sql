@@ -1,7 +1,3 @@
-select employee_id,
-case 
-	when employee_id%2 = 0 then 0
-	when name like 'M%' then 0
-	else salary end 
-as 'bonus'
-from Employees
+    select employee_id , salary * ( employee_id%2 ) * ( name not like 'M%') as bonus
+    from employees
+    order by employee_id;
